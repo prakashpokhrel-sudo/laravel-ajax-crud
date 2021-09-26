@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('mobile')->unique();
             $table->integer('status')->default(1);
+            $table->integer('total_count')->default(0);
+            $table->integer('total_sum')->default(0);
 
             $table->timestamps();
         });

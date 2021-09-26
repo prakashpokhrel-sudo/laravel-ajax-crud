@@ -72,6 +72,10 @@ class OrderController extends Controller
         $total= $total_sum;
         $count = $total_count;
 
+        $user = DB::table('users')
+        ->where('id', $record->id)
+        ->update(['total_sum' => $total, 'count' => $total_count]);
+
         $data_arr[] = array(
           "id" => $id,
           "name" => $name,
